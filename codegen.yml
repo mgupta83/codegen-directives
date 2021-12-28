@@ -1,0 +1,22 @@
+overwrite: true
+schema: 
+  - "./sampleHTTPTriggerFunction/resolvers/**/**.graphql"
+  - "./sampleHTTPTriggerFunction/typedefs/**/**.graphql"
+
+generates:
+  sampleHTTPTriggerFunction/generated.ts:
+    config:
+      contextType: "./context#Context"
+      useIndexSignature: true
+    plugins:
+      - "typescript"
+      - "typescript-resolvers"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"
+
+
+
+hooks:
+  afterAllFileWrite:
+    - npx prettier --write
