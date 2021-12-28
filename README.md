@@ -1,1 +1,1 @@
-# azure-function-app-typescript-boilerplate
+# GraphQL + Codegen + Custom Directives
